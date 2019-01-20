@@ -9,12 +9,12 @@ script:
   - docker run smettu007/docker-test npm run test -- --coverage
 
 after_success:
-  - docker build -t smettu00/multi-client ./client
-  - docker build -t smettu00/multi-nginx ./nginx  
-  - docker build -t smettu00/multi-server ./server 
-  - docker build -t smettu00/multi-worker ./worker
+  - docker build -t smett00/multi-client ./client
+  - docker build -t smett00/multi-nginx ./nginx  
+  - docker build -t smett00/multi-server ./server 
+  - docker build -t smett00/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push smettu00/multi-client 
-  - docker push smettu00/multi-nginx 
-  - docker push smettu00/multi-server 
-  - docker push smettu00/multi-worker 
+  - docker push smett00/multi-client 
+  - docker push smett00/multi-nginx 
+  - docker push smett00/multi-server 
+  - docker push smett00/multi-worker 
